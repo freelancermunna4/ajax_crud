@@ -143,6 +143,19 @@ $(document).ready(function(){
       });
     });
 
+    $(document).on("keyup","#search",function(){
+      var search = $(this).val();
+
+      $.ajax({
+        url:"search.php",
+        type:"POST",
+        data:{search:search},
+        success:function(data){
+          $("#table-data").html(data);
+        }
+      });
+    });
+
 
 });
 </script>
